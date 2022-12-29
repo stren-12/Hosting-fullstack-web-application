@@ -6,6 +6,6 @@
        "backend:install"  : "cd backend && npm install",
        "frontend:build"   : "cd frontend && npm run build",
        "backend:build"    : "cd backend && npm run build",
-       "frontend:deploy"  : "cd frontend && chmod +x bin/deploy.sh && ./bin/deploy.sh"
+       "frontend:deploy"  : "cd frontend && npm run deploy"
       }
 }
