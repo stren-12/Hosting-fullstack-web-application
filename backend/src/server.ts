@@ -6,7 +6,7 @@ import users_routes from './handlers/UsersRoutes'
 import orders_routes from './handlers/OrdersRoutes'
 import bcrypt from 'bcrypt'
 const app: express.Application = express()
-const address = 'localhost'
+const address = '*'
 const corsOptions = {
   origin: address,
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
@@ -18,7 +18,7 @@ app.use(cors(corsOptions))
 products_routes(app)
 users_routes(app)
 orders_routes(app)
-app.listen(5000, function () {
+app.listen(8080, function () {
   console.log(`starting app on: ${address}`)
 })
 
