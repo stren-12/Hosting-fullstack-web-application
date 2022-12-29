@@ -1,0 +1,74 @@
+<ng-container *ngIf="orders.length != 0; then Cart; else EmptyCart">
+</ng-container>
+
+<ng-template #Cart>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="col-md-12" *ngFor="let product of ordered_products; let i = index">
+
+                    <div class="row">
+                        <div class="col-md-6 p-0">
+                            <img width="250" class="img-fluid" src="{{ product.url }}" alt="{{product.name}}" />
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <h6 class="card-title">{{ product.name }}</h6>
+                            <div class=" mb-2">
+                                Price:<b>${{ product.price }}</b>
+                                <br><br>
+                                <input type="hidden" name="product_id" value="{{product.id}}}"
+                                    [(ngModel)]="product.id">
+
+                                Quantity:<b><input [required]="true" [min]="1" type="number" required min="1"
+                                        class="form-control" [(ngModel)]="orders[getOrderIndex(product.id)].quantity"
+                                        (ngModelChange)="changeOrderQuantity()"
+                                        value="{{getOrderQuantity(product.id)}}"></b>
+
+                                <button (click)="remove_item(product.id)" class="btn btn-danger text-white mt-2">Remove item</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="col-md-12 ">
+                    <h4>Total: <span id="somevalue">{{total | currency: '$'}}</span></h4>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form ngNativeValidate (ngSubmit)="done()">
+                    <div class="mb-3 mt-3">
+                        <label for="name" class="form-label">Full name:</label>
+                        <input required="true" type="text" [(ngModel)]="full_name" [minLength]="3" class="form-control" id="name"
+                            placeholder="minimum 3 characters" minlength="3" name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address:</label>
+                        <input required="true" type="text" [(ngModel)]="address" class="form-control" id="address"
+                            placeholder="minimum 6 characters" minlength="6" name="address">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cc_number" class="form-label">Credit Card number:</label>
+                        <input required="true" type="number" [(ngModel)]="cc_number" [minLength]="16" [maxLength]="16" class="form-control" id="address" placeholder="minimum 6 characters"
+                            minlength="16" maxlength="16" name="cc_number">
+                    </div>
+                    <p class="text-muted">We will never share your payment details with anyone else</p>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #EmptyCart>
+    <div class="container mt-5">
+        <div class="row mt-5">
+            <div class="col-md-12 mt-5 text-center">
+                <h3 class="text-danger">The Cart is empty </h3>
+                <p>Return back to <a class="text-primary" routerLink="/">Home page</a> and add items to the cart</p>
+            </div>
+        </div>
+    </div>
+</ng-template>

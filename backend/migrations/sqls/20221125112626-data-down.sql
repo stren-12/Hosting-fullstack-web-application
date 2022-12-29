@@ -1,0 +1,5 @@
+TRUNCATE orders_details CASCADE;
+TRUNCATE orders CASCADE;
+TRUNCATE products CASCADE;
+TRUNCATE categories CASCADE;
+TRUNCATE users CASCADE;

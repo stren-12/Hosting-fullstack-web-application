@@ -1,0 +1,20 @@
+@use "sass:map";
+$white: #ffffff;
+
+$theme-colors: (
+    "light":      #43b0e4,
+    "dark":       #010101,
+    "primary":    #9bc340,
+    "secondary":  #278e6c,
+    "info":       #056688,
+    "success":    #2db304,
+    "warning":    #ffc518,
+    "danger":     #f80153,
+);
+
+$primary: map-get($theme-colors,"primary");
+
+
+$font-size-base: 1.27rem;
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";

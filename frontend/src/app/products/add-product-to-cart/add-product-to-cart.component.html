@@ -1,0 +1,12 @@
+<form (ngSubmit)="AddOrder()">
+<div class="d-grid mt-4">
+    <input type="hidden" name="product_id"  [(ngModel)]="product_id"  value="{{product_id}}"/>
+
+    <select name="quantity" [(ngModel)]="quantity" class="form-select text-center">
+        <option selected  *ngFor="let n of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" value="{{ n }}">{{ n }}</option>
+      </select>
+    <button class="btn btn-primary text-center text-white mt-2">
+      Add to Cart
+    </button>
+  </div>
+</form>

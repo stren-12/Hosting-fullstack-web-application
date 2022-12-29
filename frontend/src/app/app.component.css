@@ -1,0 +1,9 @@
+.navbar .navbar-nav {
+    display: flex;
+    float: none;
+    vertical-align: top;
+  }
+  
+  .navbar .navbar-collapse {
+    text-align: center;
+  }

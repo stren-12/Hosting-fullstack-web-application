@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>Product Details</h3>
+        </div>
+        <hr>
+    </div>
+    <div class="row my-3">
+        <div class="col-md-4">
+            <img src="{{product.url}}" class="img-fluid">
+        </div>
+        <div class="col-md-8 px-4">
+            <h4 class="text-center">{{product.name}}</h4>
+            <p>{{product.description}}</p>
+            <app-add-product-to-cart  (add_order)="AddOrder($event)" [product_id]="product.id"></app-add-product-to-cart>
+            <br>
+            <a class="text-info mt-3"  routerLink="/" >Get Back to Home page</a>
+
+             
+    
+        </div>
+    </div>
+</div>

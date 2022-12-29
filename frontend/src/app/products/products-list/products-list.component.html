@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3>Products List</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 px-3 py-5" *ngFor="let product of products; let i = index">
+      <div class="card">
+        <img class="card-img-top img-fluid" src="{{ product.url }}" alt="{{ product.name }}" />
+        <div class="card-body">
+          <h4 class="card-title">{{ product.name }}</h4>
+          <p class="card-text mb-2">
+            ${{ product.price }}
+          </p>
+          <app-add-product-to-cart (add_order)="AddOrder($event)" [product_id]="product.id"></app-add-product-to-cart>
+
+
+          <div class="d-grid mt-1">
+            <a routerLink="/product/{{product.id}}" class="btn btn-info btn-block text-white">Check Product Details</a>
+
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
