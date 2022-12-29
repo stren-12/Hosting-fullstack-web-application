@@ -1,5 +1,5 @@
 
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClientService } from 'src/app/http-client.service';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/cart.service';
@@ -11,9 +11,9 @@ import { Order } from 'src/app/models/Order';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit{
   products: Product[] = [];
-  id: number =0;
+  id =0;
   product: Product = new Object as Product;
   constructor(private cart_service: CartService, private http: HttpClientService,private route: ActivatedRoute) { }
   ngOnInit(): void {

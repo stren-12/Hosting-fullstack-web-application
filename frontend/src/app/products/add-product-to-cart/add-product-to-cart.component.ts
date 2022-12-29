@@ -1,4 +1,4 @@
-import { Component, OnInit,Input, Output, EventEmitter} from '@angular/core';
+import { Component,Input, Output, EventEmitter} from '@angular/core';
 import { Order } from '../../models/Order';
 import { CartService } from 'src/app/cart.service';
 
@@ -10,17 +10,15 @@ import { CartService } from 'src/app/cart.service';
 
 
 
-export class AddProductToCartComponent  implements OnInit{
-  @Input() product_id: number = 0;
+export class AddProductToCartComponent {
+  @Input() product_id = 0;
   @Output() add_order = new EventEmitter();
-  quantity: number = 1
+  quantity = 1
   convertStringToInt(str: string){
     return Number(str);
   }
   constructor(private cart_service: CartService){}
-  ngOnInit(){
 
-  }
 
   AddOrder(){
     const order: Order = {

@@ -4,12 +4,13 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "db-migrate up && node dist/server.js",
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
     "test": "export ENV=test && yarn tsc &&  db-migrate db:drop mcit_nanodegree_test &&  db-migrate db:create  mcit_nanodegree_test  && db-migrate --env test up &&  jasmine-ts --random=false && db-migrate db:drop mcit_nanodegree_test",
     "build": "tsc",
     "lint": "eslint  --ignore-path .eslintignore --ext .js,.ts .",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "deploy": "tsc && chmod +x bin/deploy.sh && ./bin/deploy.sh"
   },
   "author": "Udacity",
   "license": "ISC",
@@ -36,6 +37,8 @@
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "jasmine": "^3.6.4",

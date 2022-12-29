@@ -12,14 +12,14 @@ import { Router } from '@angular/router';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent {
+export class CartComponent implements OnInit {
   products: Product[] = [] as Product[]
   ordered_products: Product[] = [] as Product[]
   orders: Order[] = [] as Order[]
-  total: number = 0;
-  cc_number: number = NaN;
-  full_name: string = '';
-  address: string = ''
+  total = 0;
+  cc_number = NaN;
+  full_name = '';
+  address = ''
   constructor(private http_client: HttpClientService, private cart_service: CartService, public router: Router) { }
   ngOnInit(): void {
     this.http_client.getProducts().subscribe(res => {

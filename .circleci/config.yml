@@ -6,19 +6,23 @@ orbs:
 jobs:
 build:
   docker:
-    - image: "cimg/node:14.15"
+    - image: "cimg/node:16.17.1"
   steps:
     - node/install
     - checkout
     - aws-cli/setup
     - run:
-        name: Front-End Install
-        command: |
-          npm run frontend:install
-    - run:
         name: Back-End Install
         command: |
           npm run backend:install
+    - run:
+        name: Front-End linting
+        command: |
+          npm run frontend:lint
+    - run:
+        name: Front-End Install
+        command: |
+          npm run frontend:install
     - run:
         name: Front-End Build
         command: |
@@ -31,3 +35,9 @@ build:
         name: Deploy App
         command: |
           npm run frontend:deploy
+
+workflows:
+  version: 2
+  build-and-deploy:
+      jobs:
+        - build

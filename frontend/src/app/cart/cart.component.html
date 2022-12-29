@@ -1,4 +1,4 @@
-<ng-container *ngIf="orders.length != 0; then Cart; else EmptyCart">
+<ng-container *ngIf="orders.length !== 0; then Cart; else EmptyCart">
 </ng-container>
 
 <ng-template #Cart>

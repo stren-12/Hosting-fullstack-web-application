@@ -6,7 +6,7 @@ import { CartService } from '../cart.service';
   styleUrls: ['./sucess.component.css']
 })
 export class SucessComponent implements OnInit{
-  total: number = 0;
+  total = 0;
   constructor(private cart_service:CartService){}
 
   ngOnInit(): void {
