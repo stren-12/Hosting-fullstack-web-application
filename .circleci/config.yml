@@ -16,13 +16,14 @@ jobs:
           command: |
             npm run backend:install
       - run:
-          name: Front-End linting
-          command: |
-            npm run frontend:lint
-      - run:
           name: Front-End Install
           command: |
             npm run frontend:install
+      - run:
+          name: Front-End linting
+          command: |
+            npm run frontend:lint
+     
       - run:
           name: Front-End Build
           command: |
