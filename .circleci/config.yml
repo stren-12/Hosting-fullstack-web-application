@@ -39,7 +39,7 @@ jobs:
       - run:
           name: Back-End Unit testing
           command: |
-          npm run backend:test
+            npm run backend:test
       - run:
           name: Deploy Front-End
           command: |
