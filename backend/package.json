@@ -2,12 +2,13 @@
   "name": "storefront_backend",
   "version": "0.1.0",
   "description": "",
-  "main": "server.ts",
+  "main": "dist/server.js",
   "scripts": {
-    "start": "db-migrate up && node dist/server.js",
+    "start": "node dist/server.js",
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
     "test": "export ENV=test && yarn tsc &&  db-migrate db:drop mcit_nanodegree_test &&  db-migrate db:create  mcit_nanodegree_test  && db-migrate --env test up &&  jasmine-ts --random=false && db-migrate db:drop mcit_nanodegree_test",
     "build": "tsc",
+    "migrate": "db-migrate up -v",
     "lint": "eslint  --ignore-path .eslintignore --ext .js,.ts .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
     "deploy": "tsc && chmod +x bin/deploy.sh && ./bin/deploy.sh"
