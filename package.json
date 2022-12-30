@@ -8,6 +8,7 @@
        "frontend:build"   : "cd frontend && npm run build",
        "backend:build"    : "cd backend && npm run build",
        "backend:deploy"   : "cd backend && npm run deploy",
-       "frontend:deploy"  : "cd frontend && npm run deploy"
+       "frontend:deploy"  : "cd frontend && npm run deploy",
+       "backend:test"     : "cd backend && npm run test"
       }
 }

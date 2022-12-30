@@ -15,13 +15,14 @@ INSERT INTO categories(name) VALUES
 ('PC');
 COMMIT;
 
-INSERT INTO products(name, price ,category_id) VALUES
-('Google Pixel 6' ,2650, 1),
-('Samsung S22', 2700, 1),
-('Think Pad', 4000, 2),
-('Apple Macbook Air', 6000,2),
-('Asus gaming PC', 7300,3),
-('Dell OptiPlex', 2000,3);
+INSERT INTO products(name, price ,category_id,url,description) VALUES
+('Book','9.99',1,'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80','You can read it!'),
+('Headphones','249.99',1,'https://images.unsplash.com/photo-1583394838336-acd977736f90?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80','Listen to stuff!'),
+('Backpack','79.99',1,'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80','Carry things around town!'),
+('Glasses','129.99',2,'https://images.unsplash.com/photo-1591076482161-42ce6da69f67?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80','description Now you can see!'),
+('name Cup','4.99',2,'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80','description Drink anything with it!'),
+('name Shirt','29.99',3,'https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80','description Wear it with style!');
+
 
 INSERT INTO orders(user_id, status) VALUES
 (1,'complete'),

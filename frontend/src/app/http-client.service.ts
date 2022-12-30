@@ -15,7 +15,7 @@ export class HttpClientService {
   }
 
   getProducts() :Observable<Product[]>{
-    return this.http_client.get<Product[]>('/assets/data.json');
+    return this.http_client.get<Product[]>('http://awsbackend-env.eba-mgaxbmsn.us-west-2.elasticbeanstalk.com/products');
   }
 
 }

@@ -13,6 +13,10 @@ jobs:
       - aws-cli/setup
       - eb/setup
       - run:
+          name: NPM install packeges
+          command: |
+            cd backend/ && npm install
+      - run:
           name: Back-End Install
           command: |
             npm run backend:install
@@ -33,11 +37,15 @@ jobs:
           command: |
             npm run backend:build
       - run:
-          name: Deploy Front-end
+          name: Back-End Unit testing
+          command: |
+          npm run backend:test
+      - run:
+          name: Deploy Front-End
           command: |
             npm run frontend:deploy
       - run:
-          name: Deploy Back-end
+          name: Deploy Back-End
           command: |
             npm run backend:deploy
 

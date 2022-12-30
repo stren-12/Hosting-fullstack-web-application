@@ -57,6 +57,8 @@ const create = async (req: Request, res: Response) => {
       name: req.body.name,
       price: parseFloat(req.body.price),
       category_id: parseInt(req.body.category_id),
+      url: req.body.url,
+      description: req.body.description
     }
     const product = await model.create(newProduct)
     res.json(product)
