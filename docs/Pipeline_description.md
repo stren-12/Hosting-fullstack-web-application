@@ -7,7 +7,7 @@ It's the process of seting up the basic environment only
 
 ### Set Environment Variables
 *This is done By CircleCI* <br>
-For later stages we need  Environment Variables for Testing, Deployment <br>
+For later stages we need  Environment Variables for Deployment <br>
 ![ENV](../screenshots/env.png "ENV")
 
 ### Install NodeJS 16
