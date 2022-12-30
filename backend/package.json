@@ -11,7 +11,7 @@
     "migrate": "db-migrate up -v",
     "lint": "eslint  --ignore-path .eslintignore --ext .js,.ts .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
-    "deploy": "tsc && chmod +x bin/deploy.sh && ./bin/deploy.sh && eb list && exit 0 && eb use Awsbackend-env && eb deploy Awsbackend-env --staged"
+    "deploy": "tsc && chmod +x bin/deploy.sh && ./bin/deploy.sh && eb list  && eb use Awsbackend-env && eb deploy Awsbackend-env --staged"
   },
   "author": "Udacity",
   "license": "ISC",
